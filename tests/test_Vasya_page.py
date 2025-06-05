@@ -83,6 +83,10 @@ def test_show_my_pets(driver):
         pets_data.append((parts[0], parts[1], parts[2]))
         # print(pets_data)
 
+    # Проверяем, что у всех питомцев разные имена
+    assert len(names) == len(set(names))
+
+    # Проверяем, что в списке нет повторяющихся питомцев
     assert len(pets_data) == len(set(pets_data))
     print(f'Дубликаты отсутствуют')
 
